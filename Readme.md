@@ -1,7 +1,7 @@
 # Личный проект «Что посмотреть»
 
 * Студент: [Misha Ilkovich](https://up.htmlacademy.ru/react/7/user/677431).
-* Наставник: `Неизвестно`.
+* Наставник: [Сергей Вохмянин](https://htmlacademy.ru/profile/id530823).
 
 ---
 
