@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Main from '../Main';
+import Main from '../Main/main';
 
 function App({ films, promoFilm }) {
   return (

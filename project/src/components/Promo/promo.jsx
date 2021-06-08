@@ -1,6 +1,7 @@
 import React from 'react';
 
-function Promo() {
+function Promo({ promoFilm }) {
+  const { name, genre, year } = promoFilm;
   return (
     <div className="film-card__info">
       <div className="film-card__poster">
@@ -13,10 +14,10 @@ function Promo() {
       </div>
 
       <div className="film-card__desc">
-        <h2 className="film-card__title">The Grand Budapest Hotel</h2>
+        <h2 className="film-card__title">{name}</h2>
         <p className="film-card__meta">
-          <span className="film-card__genre">Drama</span>
-          <span className="film-card__year">2014</span>
+          <span className="film-card__genre">{genre}</span>
+          <span className="film-card__year">{year}</span>
         </p>
 
         <div className="film-card__buttons">
