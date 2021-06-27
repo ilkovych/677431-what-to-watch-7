@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function Promo({ promoFilm }) {
   const { name, genre, year } = promoFilm;
@@ -38,5 +39,11 @@ function Promo({ promoFilm }) {
     </div>
   );
 }
+
+Promo.propTypes = {
+  name: PropTypes.string,
+  genre: PropTypes.string,
+  year: PropTypes.number,
+};
 
 export default Promo;

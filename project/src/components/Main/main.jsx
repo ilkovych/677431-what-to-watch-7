@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import SmallFilmCard from '../SmallFilmCard/small-film-card';
 import Promo from '../Promo/promo';
+import Logo from '../Logo/logo'
+import {Link} from 'react-router-dom';
 
 function Main({ films, promoFilm }) {
   return (
@@ -18,11 +20,7 @@ function Main({ films, promoFilm }) {
 
         <header className="page-header film-card__head">
           <div className="logo">
-            <a className="logo__link">
-              <span className="logo__letter logo__letter--1">W</span>
-              <span className="logo__letter logo__letter--2">T</span>
-              <span className="logo__letter logo__letter--3">W</span>
-            </a>
+            <Logo/>
           </div>
 
           <ul className="user-block">
@@ -37,7 +35,9 @@ function Main({ films, promoFilm }) {
               </div>
             </li>
             <li className="user-block__item">
-              <a className="user-block__link">Sign out</a>
+              <Link className='user-block__link' to='/login'>
+                Sign out
+              </Link>
             </li>
           </ul>
         </header>
@@ -138,7 +138,7 @@ Main.propTypes = {
     title: PropTypes.string.isRequired,
     preview: PropTypes.string.isRequired,
   })),
-  promoFilm: PropTypes.arrayOf(PropTypes.shape({
+  promoFilm: PropTypes.objectOf(PropTypes.shape({
     name: PropTypes.string.isRequired,
     genre: PropTypes.string.isRequired,
     year: PropTypes.number.isRequired,
