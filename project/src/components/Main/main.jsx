@@ -105,7 +105,7 @@ function Main({ films, promoFilm }) {
           </ul>
 
           <div className="catalog__films-list">
-            {films.map((film) => <SmallFilmCard key={film.title} {...film} />)}
+            {films.map((film) => <SmallFilmCard key={film.id} {...film} />)}
           </div>
 
           <div className="catalog__more">
