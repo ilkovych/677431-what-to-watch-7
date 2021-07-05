@@ -1,29 +1,38 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
+import filmsProp from '../MoviePage/movie-page.prop';
 
-function SmallFilmCard({ name, preview_image }) {
+function SmallFilmCard({ onMouseEnter, onMouseLeave, id, name, preview_image }) {
+  const handleOnMouseEnter = () => onMouseEnter(id);
+  const handleOnMouseLeave = () => onMouseLeave(null);
   return (
-    <article className="small-film-card catalog__films-card">
-      <div className="small-film-card__image">
+    <article
+      className='small-film-card catalog__films-card'
+      onMouseEnter={handleOnMouseEnter}
+      onMouseLeave={handleOnMouseLeave}
+    >
+      <div className='small-film-card__image'>
         <img
           src={preview_image}
           alt={name}
-          width="280"
-          height="175"
+          width='280'
+          height='175'
         />
       </div>
-      <h3 className="small-film-card__title">
-        <a className="small-film-card__link" href="film-page.html">
+      <h3 className='small-film-card__title'>
+        <Link
+          className='small-film-card__link'
+          to={`/films/${id}`}
+        >
           {name}
-        </a>
+        </Link>
       </h3>
     </article>
   );
 }
 
 SmallFilmCard.propTypes = {
-  title: PropTypes.string.isRequired,
-  preview: PropTypes.string.isRequired,
+  films: filmsProp,
 };
 
 export default SmallFilmCard;
